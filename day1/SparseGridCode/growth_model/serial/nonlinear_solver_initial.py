@@ -21,6 +21,7 @@ def initial(k_init, n_agents):
     M=3*n_agents+1  # number of constraints
     NELE_JAC=N*M
     NELE_HESS=(N**2-N)/2 + N    # number of non-zero entries of Hess matrix
+    ### ??? Not sure what this is doing ???
 
     # check that number of nonlinear equations is consistent 
     if (N!=3*n_agents):

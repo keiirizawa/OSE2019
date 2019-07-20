@@ -47,6 +47,7 @@ for i in range(numstart, numits):
     valold=TasmanianSG.TasmanianSparseGrid()
     valold=valnew
     valnew.write("valnew_1." + str(i+1) + ".txt")
+# Does not check until threshold and instead iterates and updates valnew until numits (iteration to end)
     
 #======================================================================
 print( "===============================================================")

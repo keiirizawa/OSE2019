@@ -27,7 +27,7 @@ def plot_routine(n_agents, grid, dim, num_points):
     np.savetxt(f, to_print, fmt= '% 2.5f')
     
     f.close()
-    return
+    return to_print
     
 #======================================================================    
 # Routine compute the errors
