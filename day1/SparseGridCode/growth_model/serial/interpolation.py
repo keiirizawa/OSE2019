@@ -51,7 +51,7 @@ def sparse_grid(n_agents, iDepth, adaptive=False):
             aPoints = grid.getNeededPoints()
             aVals = np.empty([aPoints.shape[0], 1])
             for iI in range(iNumP1):
-                aVals[iI] = solveriter.iterate(aPoints[iI], n_agents)[0]
+                aVals[iI] = solver.initial(aPoints[iI], n_agents)[0]
                 v=aVals[iI]*np.ones((1,1))
                 to_print=np.hstack((aPoints[iI].reshape(1,n_agents), v))
                 np.savetxt(file, to_print, fmt='%2.16f')
@@ -59,7 +59,7 @@ def sparse_grid(n_agents, iDepth, adaptive=False):
     else: 
         file=open("comparison0.txt", 'w')
         for iI in range(iNumP1):
-            aVals[iI]=solveriter.iterate(aPoints[iI], n_agents)[0]
+            aVals[iI]=solver.initial(aPoints[iI], n_agents)[0]
             v=aVals[iI]*np.ones((1,1))
             to_print=np.hstack((aPoints[iI].reshape(1,n_agents), v))
             np.savetxt(file, to_print, fmt='%2.16f')
