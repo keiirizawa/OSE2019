@@ -42,9 +42,14 @@ valold=TasmanianSG.TasmanianSparseGrid()
 valold=valnew
 
 for i in range(numstart, numits):
+    print('i = {}'.format(i))
     valnew=TasmanianSG.TasmanianSparseGrid()
-    valnew=interpol_iter.sparse_grid_iter(n_agents, iDepth, valold)
+    if i % 5 != 0:
+        valnew=interpol_iter.sparse_grid_iter(n_agents, iDepth, valold)
+    else:
+        valnew=interpol_iter.sparse_grid_iter(n_agents, iDepth, valold, adaptive = True)
     valold=TasmanianSG.TasmanianSparseGrid()
+    valnew.plotPoints2D()
     valold=valnew
     valnew.write("valnew_1." + str(i+1) + ".txt")
 # Does not check until threshold and instead iterates and updates valnew until numits (iteration to end)
