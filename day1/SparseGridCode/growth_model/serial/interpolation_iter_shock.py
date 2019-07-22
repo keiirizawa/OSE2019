@@ -12,7 +12,7 @@
 import TasmanianSG
 import numpy as np
 from parameters import *
-import nonlinear_solver_iterate as solveriter
+import nonlinear_solver_iterate_shock as solveriter
 
 #======================================================================
 

@@ -21,4 +21,4 @@
 #SBATCH --partition=sandyb
 
 # Run the process 
-./helloworld.exe
+./Question4.cpp.exec
