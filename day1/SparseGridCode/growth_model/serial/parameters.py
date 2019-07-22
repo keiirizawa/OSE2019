@@ -14,7 +14,7 @@ import numpy as np
 #====================================================================== 
 
 # Depth of "Classical" Sparse grid
-iDepth=1
+iDepth=2
 iOut=1         # how many outputs
 which_basis = 1 #linear basis function (2: quadratic local basis)
 
@@ -25,7 +25,7 @@ refinement_level = 5
 
 # control of iterations
 numstart = 0   # which is iteration to start (numstart = 0: start from scratch, number=/0: restart)
-numits = 10    # which is the iteration to end
+numits = 9   # which is the iteration to end
 
 # How many random points for computing the errors
 No_samples = 1000

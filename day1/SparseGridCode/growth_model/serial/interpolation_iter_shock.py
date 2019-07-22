@@ -36,14 +36,20 @@ def sparse_grid_iter(grid, theta, valold_list, adaptive=False):
 
     aPoints=grid.getPoints()
     iNumP1=aPoints.shape[0]
+    #if adaptive:
+        #print('aPoints', aPoints)
     
 
     if adaptive:
+        print('adapt iterloop')
         # file=open("comparison1.txt", 'w')
         for i in range(1):
             grid.setSurplusRefinement(fTol, -1, "fds")   #also use fds, or other rules
+            #print('grid', grid)
             aPoints = grid.getNeededPoints()
             aVals = np.empty([aPoints.shape[0], 1])
+            #print('aP', aPoints)
+            #print('aVals', aVals)
             for iI in range(iNumP1):
                 aVals[iI] = solveriter.iterate(aPoints[iI], theta, n_agents, valold_list)[0]
                 v=aVals[iI]*np.ones((1,1))
@@ -56,6 +62,7 @@ def sparse_grid_iter(grid, theta, valold_list, adaptive=False):
 
                 
     else:
+        print('dont adapt iterloop')
         aVals=np.empty([iNumP1, 1]) 
         # file=open("comparison1.txt", 'w')
         for iI in range(iNumP1):

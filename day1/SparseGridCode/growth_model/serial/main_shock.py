@@ -33,7 +33,7 @@ valnew_list = np.array([TasmanianSG.TasmanianSparseGrid(), TasmanianSG.Tasmanian
                     TasmanianSG.TasmanianSparseGrid(), TasmanianSG.TasmanianSparseGrid()])
 
 if (numstart==0):
-    for i in range(len(valnews)):
+    for i in range(len(valnew_list)):
         valnew_list[i] = interpol.sparse_grid(n_agents, iDepth)
         valnew_list.write("valnew_1." + str(numstart) + ".txt") #write file to disk for restart
 

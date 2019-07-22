@@ -123,10 +123,6 @@ def EV_GRAD_F_ITER(X, k_init, theta_init, n_agents, grid_list):
 #   Equality constraints for the first time step of the model
             
 def EV_G(X, k_init, theta_init, n_agents):
-    #???????????/
-
-
-
 
     N=len(X)
     M=3*n_agents+1  # number of constraints
@@ -172,11 +168,6 @@ def EV_G_ITER(X, k_init, theta_init, n_agents):
         G[i + n_agents]=lab[i]
         G[i+2*n_agents]=inv[i]
     
-    ????????????
-
-
-
-
     f_prod=output_f(k_init, theta_init, lab)  #####CHANGED 
     Gamma_adjust=0.5*zeta*k_init*((inv/k_init - delta)**2.0)
     sectors_sum=cons + inv - delta*k_init - (f_prod - Gamma_adjust)
