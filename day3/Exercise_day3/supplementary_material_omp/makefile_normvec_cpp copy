@@ -1,12 +1,13 @@
 #######################################################################
-all: normalize_vec.o
+all: dot_prod.o
 #######################################################################
  
 normalize_vec.o : normalize_vec.cpp
-	g++ normalize_vec.cpp -o normvec.cpp.exec
+	g++ dot_prod.cpp -o dot_prod.cpp.exec
 
 #######################################################################
 
 clean :
 	rm -fopenmp *.exec
+
 
