@@ -8,5 +8,5 @@ normalize_vec.o : normalize_vec.cpp
 #######################################################################
 
 clean :
-	rm -f *.exec
+	rm -fopenmp *.exec
 
