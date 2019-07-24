@@ -49,8 +49,8 @@ void normalize_vector_omp(double *v, int n)
         v[i] /= norm;
 }
 
-int main( void ){
-    const int N = 40000000;
+int main(){
+    const int N = 4000000;
     double *v = (double*)malloc(N*sizeof(double));
     bool validated = false;
 

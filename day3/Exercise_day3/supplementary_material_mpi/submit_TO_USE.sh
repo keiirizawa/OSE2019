@@ -9,4 +9,4 @@
 
 
 ### MPI executable
-	mpiexec -np 4 broadcast.exec
+	mpiexec -np 4 ./broadcast.exec

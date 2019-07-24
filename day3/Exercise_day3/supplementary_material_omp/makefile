@@ -13,7 +13,7 @@ dot_prod.o: dot_prod.cpp
 
 # Problem 3:
 monte_pi.o: monte_pi.cpp
-	g++ -fopenmp monte_pi.cpp -o monte_pi.exec
+	g++ -std=c++11 -fopenmp monte_pi.cpp -o monte_pi.exec
 	#clang++ -Xpreprocessor -fopenmp monte_pi.cpp -o monte_pi.exec -lomp 
 #######################################################################
 

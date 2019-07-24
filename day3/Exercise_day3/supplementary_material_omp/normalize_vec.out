@@ -1,0 +1,56 @@
+This uses 1 number of threads:
+serial error   : 1.54987e-13
+parallel error : 1.54987e-13
+1 threads
+serial     : 0.282282 seconds	parallel   : 0.301138 seconds
+speedup    : 0.937383
+efficiency : 0.937383
+This uses 2 number of threads:
+serial error   : 1.54987e-13
+parallel error : 1.55431e-14
+2 threads
+serial     : 0.282484 seconds	parallel   : 0.212655 seconds
+speedup    : 1.32837
+efficiency : 0.664184
+This uses 3 number of threads:
+serial error   : 1.54987e-13
+parallel error : 4.29656e-14
+3 threads
+serial     : 0.28246 seconds	parallel   : 0.200969 seconds
+speedup    : 1.40549
+efficiency : 0.468497
+This uses 4 number of threads:
+serial error   : 1.54987e-13
+parallel error : 2.4758e-14
+4 threads
+serial     : 0.262419 seconds	parallel   : 0.191328 seconds
+speedup    : 1.37156
+efficiency : 0.342891
+This uses 5 number of threads:
+serial error   : 1.54987e-13
+parallel error : 2.83107e-14
+5 threads
+serial     : 0.281844 seconds	parallel   : 0.170658 seconds
+speedup    : 1.65151
+efficiency : 0.330302
+This uses 6 number of threads:
+serial error   : 1.54987e-13
+parallel error : 5.87308e-14
+6 threads
+serial     : 0.281965 seconds	parallel   : 0.168101 seconds
+speedup    : 1.67736
+efficiency : 0.279559
+This uses 7 number of threads:
+serial error   : 1.54987e-13
+parallel error : 3.64153e-14
+7 threads
+serial     : 0.28173 seconds	parallel   : 0.163784 seconds
+speedup    : 1.72013
+efficiency : 0.245733
+This uses 8 number of threads:
+serial error   : 1.54987e-13
+parallel error : 1.66533e-14
+8 threads
+serial     : 0.282381 seconds	parallel   : 0.161095 seconds
+speedup    : 1.75289
+efficiency : 0.219111
