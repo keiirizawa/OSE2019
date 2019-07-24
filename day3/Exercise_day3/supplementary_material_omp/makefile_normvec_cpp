@@ -3,10 +3,8 @@ all: normalize_vec.o
 #######################################################################
  
 normalize_vec.o : normalize_vec.cpp
-	g++ normalize_vec.cpp -o normvec.cpp.exec
+	g++ -fopenmp normalize_vec.cpp -o normvec.cpp.exec
 
 #######################################################################
 
-clean :
-	rm -fopenmp *.exec
 
