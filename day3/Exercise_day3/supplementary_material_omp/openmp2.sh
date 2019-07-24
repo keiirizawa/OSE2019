@@ -14,5 +14,6 @@ for i in `seq 1 8`; do
     echo "This uses $i number of threads:"
     export OMP_NUM_THREADS=$i
     ./normalize_vec.exec
+done
 
 
