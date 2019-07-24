@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-
 #include <omp.h>
 
 int main(void){
