@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
 
 
     if (rank == 0){
-        pi = total_sum*w;
-        std::cout << total_sum;
+        pi = total_sum*w/size;
+        std::cout << total_sum*w;
     }
 
     time += omp_get_wtime();
