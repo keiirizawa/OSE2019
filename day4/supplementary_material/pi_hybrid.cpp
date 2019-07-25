@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
     }
 
     time += omp_get_wtime();
+    MPI_Finalize();
 
     std::cout << num_steps
               << " steps approximates pi as : "
@@ -49,6 +50,5 @@ int main(int argc, char *argv[]) {
               << std::endl;
     std::cout << "the solution took " << time << " seconds" <<std::endl;
 
-    MPI_Finalize();
     return 0;
 }

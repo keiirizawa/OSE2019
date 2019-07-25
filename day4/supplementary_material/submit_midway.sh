@@ -8,7 +8,7 @@
 #SBATCH --ntasks=4
 
 # and request 8 cpus per task for OpenMP threads
-#SBATCH --cpus-per-task=5
+#SBATCH --cpus-per-task=8
 
 # this job will run in the broadwl partition on Midway
 #SBATCH --partition=broadwl
