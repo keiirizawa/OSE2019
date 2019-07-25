@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 
     if (rank == 0){
         pi = total_sum*w;
+        std::cout << total_sum;
     }
 
     time += omp_get_wtime();
