@@ -8,7 +8,7 @@
 const int num_steps = 500000000;
 
 int main(int argc, char *argv[]) {
-    int i, rank, size, senddata[20], receivedata;
+    int i, rank, size, num;
     double sum = 0.0;
     double total_sum = 0.0;
     double pi  = 0.0;
@@ -20,11 +20,12 @@ int main(int argc, char *argv[]) {
     std::cout << "using " << omp_get_max_threads() << " OpenMP threads" << std::endl;
 
     const double w = 1.0/double(num_steps);
+    num = num_steps / size;
 
     double time = -omp_get_wtime();
 
     #pragma omp parallel for reduction(+:sum)
-    for(int i=0; i<num_steps; ++i) {
+    for(int i=0; i<num; ++i) {
         double x = (i+0.5)*w;
         sum += 4.0/(1.0+x*x);
     }
