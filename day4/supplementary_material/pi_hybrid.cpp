@@ -33,7 +33,9 @@ int main(int argc, char *argv[]) {
     }
 
     /* gather the value of count of each processor to receivedata of rank 0 */
-    MPI_Gather(&sum, 1, MPI_INT, &total_sum, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Gather(&sum, 1, MPI_DOUBLE, &total_sum, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+    //MPI_Send(&sum, 1, MPI_DOUBLE, 0, tag, comm);
+
 
     if (rank == 0){
         pi = total_sum*w;
