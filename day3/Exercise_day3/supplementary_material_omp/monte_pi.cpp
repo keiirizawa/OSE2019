@@ -8,9 +8,9 @@ double monte_carlo(int R, int N){
     using namespace std;
     double x, y, count_circle;
 
-    random_device rd;  //used to obtain seed
-    mt19937 gen(rd());  //engine seeded w/ rd()
-    uniform_real_distribution<double> dis(-R, R);
+    std::random_device rd;  //used to obtain seed
+    std::mt19937 gen(rd());  //engine seeded w/ rd()
+    std::uniform_real_distribution<double> dis(-R, R);
     
     count_circle = 0;
     for (int i=0; i<N; i++){
@@ -30,9 +30,9 @@ double monte_carlo_omp(int R, int N){
     using namespace std;
     double x, y, count_circle;
 
-    random_device rd;  //used to obtain seed
-    mt19937 gen(rd());  //engine seeded w/ rd()
-    uniform_real_distribution<double> dis(-R, R);
+    std::random_device rd;  //used to obtain seed
+    std::mt19937 gen(rd());  //engine seeded w/ rd()
+    std::uniform_real_distribution<double> dis(-R, R);
 
     count_circle = 0;
     #pragma omp parallel for reduction(+:count_circle)

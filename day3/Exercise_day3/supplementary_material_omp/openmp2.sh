@@ -6,14 +6,15 @@
 
 #SBATCH --time=00:01:00
 
-#SBATCH --job-name=normalize_vec
-#SBATCH --output=normalize_vec.out
-#SBATCH --error=normalize_vec.err
+#SBATCH --job-name=dot_product
+#SBATCH --output=dot_product.out
+#SBATCH --error=dot_product.err
 
 for i in `seq 1 8`; do
     echo "This uses $i number of threads:"
     export OMP_NUM_THREADS=$i
-    ./normalize_vec.exec
+    ./dot_prod.exe
+    echo "\n"
 done
 
 
