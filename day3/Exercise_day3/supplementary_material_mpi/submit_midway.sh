@@ -7,6 +7,8 @@
 #SBATCH --output=broadcast.out
 #SBATCH --error=broadcast.err
 
+# load the openmpi module
+module load openmpi
 
 ### MPI executable
-	mpiexec -np 4 ./broadcast.exec
+	mpiexec -np ./broadcast.exec
