@@ -7,8 +7,8 @@
 int main(int argc, char *argv[])
 {
     using namespace std;
-    int i, rank, size, N, num, R, count, total_count;
-    double x, y, pi;
+    int i, rank, size, N, num, R;
+    double count, total_count, x, y, pi;
     R = 1;
     random_device rd;  //used to obtain seed
     mt19937 gen(rd());  //engine seeded w/ rd()
@@ -21,12 +21,12 @@ int main(int argc, char *argv[])
     N = 1000000;
     num = N / size;
 
-    for (i=0; i<N; i++){
+    for (i=0; i<num; i++){
         x = dis(gen);
         y = dis(gen);
         
         if (pow(x,2) + pow(y,2) <= pow(R, 2)){
-            count += 1;
+            count += 1.0;
         }
     }
 
