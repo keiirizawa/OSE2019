@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+#include <stdio.h>
+#include <random>
+#include <mpi.h>
+
+int main(int argc, char *argv[])
+{
+    using namespace std;
+    int i, rank, size, N, num, R, count, total_count;
+    double x, y, pi;
+    R = 1;
+    random_device rd;  //used to obtain seed
+    mt19937 gen(rd());  //engine seeded w/ rd()
+    uniform_real_distribution<double> dis(-R, R);
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    N = 1000000;
+    num = N / size;
+
+    for (i=0; i<N; i++){
+        x = dis(gen);
+        y = dis(gen);
+        
+        if (pow(x,2) + pow(y,2) <= pow(R, 2)){
+            count += 1;
+        }
+    }
+
+    /* gather the value of count of each processor to receivedata of rank 0 */
+    MPI_Gather(&count, 1, MPI_INT, &total_count, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    if (rank == 0){
+        pi = 4 * total_count / N;
+        printf("The value of pi is approximated as: %f", pi);
+    }
+
+    MPI_Finalize();
+    return 0;
+}
