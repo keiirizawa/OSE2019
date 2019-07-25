@@ -35,7 +35,9 @@ int main(int argc, char *argv[]) {
     /* gather the value of count of each processor to receivedata of rank 0 */
     MPI_Gather(&sum, 1, MPI_INT, &total_sum, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    pi = total_sum*w;
+    if (rank == 0){
+        pi = total_sum*w;
+    }
 
     time += omp_get_wtime();
 
@@ -46,4 +48,7 @@ int main(int argc, char *argv[]) {
               << std::fabs(M_PI-pi)/M_PI
               << std::endl;
     std::cout << "the solution took " << time << " seconds" <<std::endl;
+
+    MPI_Finalize();
+    return 0;
 }
