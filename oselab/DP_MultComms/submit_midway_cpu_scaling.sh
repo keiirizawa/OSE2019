@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash 
 
 #SBATCH --ntasks=4
 #SBATCH --ntasks-per-node=1
@@ -9,6 +9,8 @@
 #SBATCH --job-name=DP_scaling
 #SBATCH --output=DP_scaling.out
 #SBATCH --error=DP_scaling.err
+
+#SBATCH --partition=broadwl
 
 # load the openmpi default module
 module load openmpi
