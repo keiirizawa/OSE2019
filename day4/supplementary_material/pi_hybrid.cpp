@@ -9,9 +9,8 @@ const int num_steps = 500000000;
 
 int main(int argc, char *argv[]) {
     int i, rank, size, num;
-    double sum = 0.0;
-    double total_sum = 0.0;
     double ri, root_pi;
+    double sum = 0.0;
     double pi  = 0.0;
 
     MPI_Init(&argc, &argv);
@@ -31,8 +30,7 @@ int main(int argc, char *argv[]) {
         double x = ri + (i+0.5)*w;
         sum += 4.0/(1.0+x*x);
     }
-    pi = total_sum*w;
-    
+    pi = sum * w;
 
     /* Reduce the value of count of each processor to rank 0 */
     MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
@@ -49,6 +47,6 @@ int main(int argc, char *argv[]) {
         std::cout << "the solution took " << time << " seconds" <<std::endl;
     }
     MPI_Finalize();
-    
+
     return 0;
 }
