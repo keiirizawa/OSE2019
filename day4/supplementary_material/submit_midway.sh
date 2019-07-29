@@ -4,18 +4,18 @@
 
 #SBATCH --output=pi_hybrid.out
 
-# this job requests 4 MPI processes
-#SBATCH --ntasks=4
-
-# and request 8 cpus per task for OpenMP threads
-#SBATCH --cpus-per-task=8
-
 # this job will run in the broadwl partition on Midway
 #SBATCH --partition=broadwl
 
 # load the openmpi default module
 module load openmpi
 
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+for i in `seq 1 3`; do
+    for j in `seq 8 10`; do
+        echo "This uses $i MPI processors and $j OMP threads:"
+        export OMP_NUM_THREADS=$j
+        mpirun -n $i ./pi_hybrid.exec
+        echo "\n"
+    done
+done
 
-mpirun ./pi_hybrid.exec
