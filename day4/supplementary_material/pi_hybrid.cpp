@@ -7,8 +7,13 @@
 
 const int num_steps = 500000000;
 
+// Following split of MPI work follows closely from:
+// https://stackoverflow.com/questions/15658145/how-to-share-work-roughly-evenly-
+// between-processes-in-mpi-despite-the-array-size
+
 int main(int argc, char *argv[]) {
-    int i, rank, size, num, proc_id;
+    int i, rank, size, count, remainder, proc_id;
+    int start, stop;
     double ri, root_pi;
     double sum = 0.0;
     double pi  = 0.0;
@@ -19,18 +24,29 @@ int main(int argc, char *argv[]) {
 
     //std::cout << "using " << omp_get_max_threads() << " OpenMP threads" << std::endl;
 
-    const double w = 1.0/double(num_steps);
-    num = num_steps / size;
-    ri = rank * num;
-
     double time = -omp_get_wtime();
 
+    const double w = 1.0/double(num_steps);
+    count = num_steps / size;
+    remainder = num_steps % size;
+
+    // First 'remainder' ranks get count + 1 each 
+    if (rank < remainder){
+        start = rank * (count + 1);
+        stop = start + count;
+    }
+
+    // Remaining 'size - remainder' ranks get 'count' tasks each
+    else{
+        start = rank * count + remainder;
+        stop = start + (count - 1)
+    }
+
     #pragma omp parallel for reduction(+:sum)
-    for(int i=0; i<num; ++i) {
-        double x = ri + (i + 0.5) * w;
+    for (i = start; i <= stop; ++i){
+        double x = (i + 0.5) * w;
         sum += 4.0 / (1.0 + x * x);
     }
-    
     pi = sum * w;
 
     /* Reduce the value of count of each processor to rank 0 */
