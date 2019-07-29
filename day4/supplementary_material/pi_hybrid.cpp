@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 
     const double w = 1.0/double(num_steps);
     num = num_steps / size;
-    ri = rank / size;  // b/c interval [0,1]
+    ri = rank * num;
 
     double time = -omp_get_wtime();
     
