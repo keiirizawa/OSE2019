@@ -1,5 +1,5 @@
-#!/bin/bash
-#SBATCH --ntasks= 12
+#!/bin/bash -l
+#SBATCH --ntasks=8
 #SBATCH --job-name=pi_hybrid
 #SBATCH --cpus-per-task=8
 #SBATCH --output=pi_hybrid.out
