@@ -30,13 +30,14 @@ int main(int argc, char *argv[]) {
     count = num_steps / size;
     remainder = num_steps % size;
 
-    // First 'remainder' ranks get count + 1 each 
+    // Figuring out how to split work to different ranks
+    //// First 'remainder' ranks get count + 1 each 
     if (rank < remainder){
         start = rank * (count + 1);
         stop = start + count;
     }
 
-    // Remaining 'size - remainder' ranks get 'count' tasks each
+    //// Remaining 'size - remainder' ranks get 'count' tasks each
     else{
         start = rank * count + remainder;
         stop = start + (count - 1);
@@ -52,23 +53,7 @@ int main(int argc, char *argv[]) {
     /* Reduce the value of count of each processor to rank 0 */
     MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
-    // #pragma omp parallel for reduction(+:sum)
-    // for(int i=0; i<num; ++i) {
-    //     double x = ri + (i + 0.5) * w;
-    //     sum += 4.0 / (1.0 + x * x);
-    // }
-
-    // MPI_Send(&sum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
-
-    // if(rank == 0){
-    //     for(proc_id = 0; proc_id < size; proc_id++) {
-    //         MPI_Recv(&sum, 1, MPI_DOUBLE, proc_id, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-    //         pi += sum;
-    //     }
-
-    //     pi *= pi * w ;
-
-        time += omp_get_wtime();
+    time += omp_get_wtime();
 
     if(rank == 0){
         std::cout << num_steps
