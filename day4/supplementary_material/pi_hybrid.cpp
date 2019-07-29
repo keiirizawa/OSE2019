@@ -20,14 +20,14 @@ int main(int argc, char *argv[]) {
     //std::cout << "using " << omp_get_max_threads() << " OpenMP threads" << std::endl;
 
     const double w = 1.0/double(num_steps);
-    //num = num_steps / size;
-    //ri = rank / size;  // b/c interval [0,1]
+    num = num_steps / size;
+    ri = rank / size;  // b/c interval [0,1]
 
     double time = -omp_get_wtime();
-
+    
     #pragma omp parallel for reduction(+:sum)
-    for(int i=0; i<num_steps; ++i) {
-        double x = (i + 0.5) * w;
+    for(int i=0; i<size; ++i) {
+        double x = ri + (i + 0.5) * w;
         sum += 4.0 / (1.0 + x * x);
     }
     pi = sum * w;
