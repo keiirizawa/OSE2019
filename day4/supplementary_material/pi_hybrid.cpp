@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     // Remaining 'size - remainder' ranks get 'count' tasks each
     else{
         start = rank * count + remainder;
-        stop = start + (count - 1)
+        stop = start + (count - 1);
     }
 
     #pragma omp parallel for reduction(+:sum)
