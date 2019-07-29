@@ -1,0 +1,12 @@
+This uses 1 MPI processors and 8 OMP threads:
+slurmstepd-midway2-0054: error: *** JOB 61606879 ON midway2-0054 CANCELLED AT 2019-07-29T17:28:52 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with its daemon located on node:
+
+  hostname:  midway2-0066
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
