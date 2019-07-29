@@ -49,19 +49,17 @@ int main(int argc, char *argv[]) {
             MPI_Recv(&sum, 1, MPI_DOUBLE, proc_id, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             pi += sum;
         }
-    }
 
-    pi *= pi * w;
+        pi *= pi * w / size;
 
-    time += omp_get_wtime();
+        time += omp_get_wtime();
 
-    if (rank == 0){
         std::cout << num_steps
-              << " steps approximates pi as : "
-              << pi
-              << ", with relative error "
-              << std::fabs(M_PI-pi)/M_PI
-              << std::endl;
+            << " steps approximates pi as : "
+            << pi
+            << ", with relative error "
+            << std::fabs(M_PI-pi)/M_PI
+            << std::endl;
         std::cout << "the solution took " << time << " seconds" <<std::endl;
     }
     MPI_Finalize();
