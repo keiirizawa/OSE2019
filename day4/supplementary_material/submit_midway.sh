@@ -16,7 +16,7 @@ for i in `seq 1 3`; do
         echo "This uses $i MPI processors and $j OMP threads:"
         export SLURM_NTASKS=$i
         export OMP_NUM_THREADS=$j
-        mpirun -np  ./pi_hybrid.exec
+        mpirun -np $SLURM_NTASKS ./pi_hybrid.exec
         echo "\n"
     done
 done
