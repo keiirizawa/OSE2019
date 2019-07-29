@@ -26,10 +26,11 @@ int main(int argc, char *argv[]) {
     double time = -omp_get_wtime();
     
     #pragma omp parallel for reduction(+:sum)
-    for(int i=0; i<size; ++i) {
+    for(int i=0; i<num; ++i) {
         double x = ri + (i + 0.5) * w;
         sum += 4.0 / (1.0 + x * x);
     }
+    
     pi = sum * w;
 
     /* Reduce the value of count of each processor to rank 0 */
