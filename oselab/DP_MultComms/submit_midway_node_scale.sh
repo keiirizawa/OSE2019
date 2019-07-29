@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH --ntasks=30
+#SBATCH --ntasks=8
 #SBATCH --job-name=DP_scale
 #SBATCH --cpus-per-task=28
 #SBATCH --output=DP_scale.out
@@ -11,10 +11,12 @@
 module load openmpi
 
 
-for j in `seq 1 5`; do
-    echo "This uses 10 MPI nodes and $j OMP threads:"
+for i in `seq 1 5`; do
+    echo "This uses $i MPI processors and 28 OMP threads:"
     export SLURM_NTASKS=$i
     export OMP_NUM_THREADS=$j
-    mpirun -np $SLURM_NTASKS ./VFI
+    mpirun -np $SLURM_NTASKS ./pi_hybrid.exec
     echo "\n"
 done
+
+
