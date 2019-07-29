@@ -1,120 +1,55 @@
-This uses 10 MPI nodes and 1 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
+This uses 1 MPI processors and 28 OMP threads:
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
 
-  Option: np
-  Param:  ./VFI
+Executable: ./pi_hybrid.exec
+Node: midway2-0084
 
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
 \n
-This uses 10 MPI nodes and 2 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
+This uses 2 MPI processors and 28 OMP threads:
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
 
-  Option: np
-  Param:  ./VFI
+Executable: ./pi_hybrid.exec
+Node: midway2-0084
 
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
 \n
-This uses 10 MPI nodes and 3 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
+This uses 3 MPI processors and 28 OMP threads:
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
 
-  Option: np
-  Param:  ./VFI
+Executable: ./pi_hybrid.exec
+Node: midway2-0084
 
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
 \n
-This uses 10 MPI nodes and 4 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
+This uses 4 MPI processors and 28 OMP threads:
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
 
-  Option: np
-  Param:  ./VFI
+Executable: ./pi_hybrid.exec
+Node: midway2-0084
 
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
 \n
-This uses 10 MPI nodes and 5 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
+This uses 5 MPI processors and 28 OMP threads:
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
 
-  Option: np
-  Param:  ./VFI
+Executable: ./pi_hybrid.exec
+Node: midway2-0084
 
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
-\n
-This uses 10 MPI nodes and 6 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
-
-  Option: np
-  Param:  ./VFI
-
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
-\n
-This uses 10 MPI nodes and 7 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
-
-  Option: np
-  Param:  ./VFI
-
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
-\n
-This uses 10 MPI nodes and 8 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
-
-  Option: np
-  Param:  ./VFI
-
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
-\n
-This uses 10 MPI nodes and 9 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
-
-  Option: np
-  Param:  ./VFI
-
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
-\n
-This uses 10 MPI nodes and 10 OMP threads:
-----------------------------------------------------------------------------
-Open MPI has detected that a parameter given to a command line
-option does not match the expected format:
-
-  Option: np
-  Param:  ./VFI
-
-This is frequently caused by omitting to provide the parameter
-to an option that requires one. Please check the command line and try again.
-----------------------------------------------------------------------------
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
 \n
