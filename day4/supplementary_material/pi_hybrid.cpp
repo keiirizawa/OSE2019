@@ -38,7 +38,6 @@ int main(int argc, char *argv[]) {
     MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     time += omp_get_wtime();
-    MPI_Finalize();
 
     if (rank == 0){
         std::cout << num_steps
@@ -49,5 +48,7 @@ int main(int argc, char *argv[]) {
               << std::endl;
         std::cout << "the solution took " << time << " seconds" <<std::endl;
     }
+    MPI_Finalize();
+    
     return 0;
 }
