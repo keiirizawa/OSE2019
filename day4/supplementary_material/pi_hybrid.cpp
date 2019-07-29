@@ -49,6 +49,7 @@ int main(int argc, char *argv[]) {
             MPI_Recv(&sum, 1, MPI_DOUBLE, proc_id, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
             pi += sum;
         }
+    }
 
     pi *= pi * w;
 
