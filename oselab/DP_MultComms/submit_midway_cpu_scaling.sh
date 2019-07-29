@@ -13,7 +13,7 @@
 # load the openmpi default module
 module load openmpi
 
-for i in `seq 1 28`; do
+for i in `seq 1 10`; do
     echo "This uses $i number of CPU (threads):"
     export OMP_NUM_THREADS=$i
     mpirun ./VFI
