@@ -25,40 +25,41 @@ int main(int argc, char *argv[]) {
 
     double time = -omp_get_wtime();
 
-    // #pragma omp parallel for reduction(+:sum)
-    // for(int i=0; i<num; ++i) {
-    //     double x = ri + (i + 0.5) * w;
-    //     sum += 4.0 / (1.0 + x * x);
-    // }
-    
-    // pi = sum * w;
-
-    // /* Reduce the value of count of each processor to rank 0 */
-    // MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
     #pragma omp parallel for reduction(+:sum)
     for(int i=0; i<num; ++i) {
         double x = ri + (i + 0.5) * w;
         sum += 4.0 / (1.0 + x * x);
     }
+    
+    pi = sum * w;
 
-    MPI_Send(&sum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+    /* Reduce the value of count of each processor to rank 0 */
+    MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
-    if(rank == 0){
-        for(proc_id = 0; proc_id < size; proc_id++) {
-            MPI_Recv(&sum, 1, MPI_DOUBLE, proc_id, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-            pi += sum;
-        }
+    // #pragma omp parallel for reduction(+:sum)
+    // for(int i=0; i<num; ++i) {
+    //     double x = ri + (i + 0.5) * w;
+    //     sum += 4.0 / (1.0 + x * x);
+    // }
 
-        pi *= pi * w / size;
+    // MPI_Send(&sum, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
+
+    // if(rank == 0){
+    //     for(proc_id = 0; proc_id < size; proc_id++) {
+    //         MPI_Recv(&sum, 1, MPI_DOUBLE, proc_id, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    //         pi += sum;
+    //     }
+
+    //     pi *= pi * w ;
 
         time += omp_get_wtime();
 
+    if(rank == 0){
         std::cout << num_steps
             << " steps approximates pi as : "
-            << pi
+            << root_pi
             << ", with relative error "
-            << std::fabs(M_PI-pi)/M_PI
+            << std::fabs(M_PI-root_pi)/M_PI
             << std::endl;
         std::cout << "the solution took " << time << " seconds" <<std::endl;
     }
