@@ -1,8 +1,8 @@
 #!/bin/bash -l
 #SBATCH --ntasks=30
-#SBATCH --job-name=DP_scale
+#SBATCH --job-name=DP_cpu_scale
 #SBATCH --cpus-per-task=28
-#SBATCH --output=DP_scale.out
+#SBATCH --output=DP_cpu_scale.out
 
 # this job will run in the broadwl partition on Midway
 #SBATCH --partition=broadwl
