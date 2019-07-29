@@ -11,14 +11,14 @@ int main(int argc, char *argv[]) {
     int i, rank, size, num;
     double sum = 0.0;
     double total_sum = 0.0;
-    double ri;
+    double ri, root_pi;
     double pi  = 0.0;
 
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    std::cout << "using " << omp_get_max_threads() << " OpenMP threads" << std::endl;
+    //std::cout << "using " << omp_get_max_threads() << " OpenMP threads" << std::endl;
 
     const double w = 1.0/double(num_steps);
     num = num_steps / size;
@@ -31,26 +31,23 @@ int main(int argc, char *argv[]) {
         double x = ri + (i+0.5)*w;
         sum += 4.0/(1.0+x*x);
     }
+    pi = total_sum*w;
+    
 
-    /* gather the value of count of each processor to receivedata of rank 0 */
-    MPI_Gather(&sum, 1, MPI_DOUBLE, &total_sum, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-    //MPI_Send(&sum, 1, MPI_DOUBLE, 0, tag, comm);
-
-
-    if (rank == 0){
-        pi = total_sum*w;
-    }
+    /* Reduce the value of count of each processor to rank 0 */
+    MPI_Reduce(&pi, &root_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     time += omp_get_wtime();
     MPI_Finalize();
 
-    std::cout << num_steps
+    if (rank == 0){
+        std::cout << num_steps
               << " steps approximates pi as : "
-              << pi
+              << root_pi
               << ", with relative error "
-              << std::fabs(M_PI-pi)/M_PI
+              << std::fabs(M_PI-root_pi)/M_PI
               << std::endl;
-    std::cout << "the solution took " << time << " seconds" <<std::endl;
-
+        std::cout << "the solution took " << time << " seconds" <<std::endl;
+    }
     return 0;
 }
