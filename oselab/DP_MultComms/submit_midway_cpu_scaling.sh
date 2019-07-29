@@ -1,8 +1,8 @@
 #!/bin/bash -l
-#SBATCH --ntasks=30
-#SBATCH --job-name=DP_cpu_scale
+#SBATCH --ntasks=8
+#SBATCH --job-name=DP_scale
 #SBATCH --cpus-per-task=28
-#SBATCH --output=DP_cpu_scale.out
+#SBATCH --output=DP_scale.out
 
 # this job will run in the broadwl partition on Midway
 #SBATCH --partition=broadwl
@@ -11,7 +11,7 @@
 module load openmpi
 
 
-for j in `seq 1 5`; do
+for j in `seq 1 5; do
     echo "This uses 10 MPI nodes and $j OMP threads:"
     export SLURM_NTASKS=$i
     export OMP_NUM_THREADS=$j
