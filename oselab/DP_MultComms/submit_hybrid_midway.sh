@@ -30,3 +30,14 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 # Run the process with mpirun. Notice -n is not required. mpirun will
 # automatically figure out how many processes to run from the slurm options
 mpirun ./VFI
+
+
+for i in `seq 1 3`; do
+    for j in `seq 8 10`; do
+        echo "This uses $i MPI processors and $j OMP threads:"
+        export SLURM_NTASKS=$i
+        export OMP_NUM_THREADS=$j
+        mpirun -np $SLURM_NTASKS ./pi_hybrid.exec
+        echo "\n"
+    done
+done
