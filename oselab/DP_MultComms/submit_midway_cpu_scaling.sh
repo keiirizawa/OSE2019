@@ -1,23 +1,10 @@
-#!/bin/bash
-# a sample job submission script to submit a hybrid MPI/OpenMP job to the sandyb 
-# partition on Midway1 please change the --partition option if you want to use 
-# another partition on Midway1
+#!/bin/bash -l
+#SBATCH --ntasks=8
+#SBATCH --job-name=DP_scale
+#SBATCH --cpus-per-task=8
+#SBATCH --output=DP_scale.out
 
-#SBATCH --time=00:01:00
-
-# set the job name to hello-hybrid
-#SBATCH --job-name=DP_scaling
-
-# send output to hello-hybrid.out
-#SBATCH --output=DP_scaling.out
-
-# this job requests 5 MPI processes
-#SBATCH --ntasks=5
-
-# and request 16 cpus per task for OpenMP threads
-#SBATCH --cpus-per-task=16
-
-# this job will run in the sandyb partition on Midway1
+# this job will run in the broadwl partition on Midway
 #SBATCH --partition=broadwl
 
 # load the openmpi default module
@@ -33,4 +20,3 @@ for i in `seq 1 3`; do
         echo "\n"
     done
 done
-
