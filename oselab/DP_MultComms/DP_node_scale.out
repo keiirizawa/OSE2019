@@ -1,0 +1,60 @@
+This uses 1 MPI processors and 28 OMP threads:
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 61.131693 seconds
+Final Part (writing) took 0.834992 seconds
+\n
+This uses 2 MPI processors and 28 OMP threads:
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 31.286153 seconds
+Final Part (writing) took 0.828767 seconds
+\n
+This uses 3 MPI processors and 28 OMP threads:
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 21.700828 seconds
+Final Part (writing) took 0.861716 seconds
+\n
+This uses 4 MPI processors and 28 OMP threads:
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 16.744303 seconds
+Final Part (writing) took 0.823367 seconds
+\n
+This uses 5 MPI processors and 28 OMP threads:
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 14.309540 seconds
+Final Part (writing) took 0.785411 seconds
+\n

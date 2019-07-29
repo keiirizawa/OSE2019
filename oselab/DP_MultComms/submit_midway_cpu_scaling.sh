@@ -13,8 +13,7 @@ module load openmpi
 
 for j in `seq 1 5; do
     echo "This uses 10 MPI nodes and $j OMP threads:"
-    export SLURM_NTASKS=$i
     export OMP_NUM_THREADS=$j
-    mpirun -np $SLURM_NTASKS ./VFI
+    mpirun ./VFI
     echo "\n"
 done
