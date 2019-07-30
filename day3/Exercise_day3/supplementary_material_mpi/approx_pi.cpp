@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
 {
     using namespace std;
     int i, rank, size, N, num, R;
+    int remainder, start, stop;
     double count, total_count, x, y, pi;
     R = 1;
     random_device rd;  //used to obtain seed
@@ -21,7 +22,18 @@ int main(int argc, char *argv[])
     N = 1000000;
     num = N / size;
 
-    for (i=0; i<num; i++){
+    if (rank < remainder){
+        start = rank * (num + 1);
+        stop = start + num;
+    }
+
+    //// Remaining 'size - remainder' ranks get 'count' tasks each
+    else{
+        start = rank * num + remainder;
+        stop = start + (num - 1);
+    }
+
+    for (i = start; i <= stop; ++i){
         x = dis(gen);
         y = dis(gen);
         
