@@ -1,3 +1,1 @@
---------------------------------------------------------------------------
-mpirun noticed that process rank 0 with PID 0 on node midway2-0084 exited on signal 11 (Segmentation fault).
---------------------------------------------------------------------------
+The value of pi is approximated as: 3.143896

@@ -1,4 +1,0 @@
-[midway2-0084:30910] *** Process received signal ***
-[midway2-0084:30910] Signal: Segmentation fault (11)
-[midway2-0084:30910] Signal code:  (128)
-[midway2-0084:30910] Failing at address: (nil)
