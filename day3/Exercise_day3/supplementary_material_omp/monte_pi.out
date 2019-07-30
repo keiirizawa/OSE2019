@@ -1,0 +1,8 @@
+Please prove R and N:
+4 threads
+serial     : 1.50213e-05 seconds	
+parallel   : 0.000115276 seconds
+speedup    : 0.130307
+efficiency : 0.0325767
+pi serial : -nan
+pi omp    : -nan

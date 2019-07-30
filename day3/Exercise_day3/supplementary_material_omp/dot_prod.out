@@ -1,8 +1,32 @@
 This uses 1 number of threads:
+dot of vectors with length 100000000 with 1 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.650363 seconds
 This uses 2 number of threads:
+dot of vectors with length 100000000 with 2 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.362927 seconds
 This uses 3 number of threads:
+dot of vectors with length 100000000 with 3 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.241708 seconds
 This uses 4 number of threads:
+dot of vectors with length 100000000 with 4 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.17971 seconds
 This uses 5 number of threads:
+dot of vectors with length 100000000 with 5 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.168992 seconds
 This uses 6 number of threads:
+dot of vectors with length 100000000 with 6 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.146818 seconds
 This uses 7 number of threads:
+dot of vectors with length 100000000 with 7 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.12474 seconds
 This uses 8 number of threads:
+dot of vectors with length 100000000 with 8 threads
+dot product 2.5e+15 which matches the expected value 2.5e+15
+that took 0.111888 seconds
