@@ -59,3 +59,32 @@ Iterations took 8.508082 seconds
 Final Part (writing) took 0.794605 seconds
 \n
 This uses 11 MPI processors and 28 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 8.704592 seconds
+Final Part (writing) took 0.800811 seconds
+\n
+This uses 12 MPI processors and 28 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 8.643688 seconds
+Final Part (writing) took 0.786744 seconds
+\n
+This uses 13 MPI processors and 28 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 8.704900 seconds
+Final Part (writing) took 0.784269 seconds
+\n
+This uses 14 MPI processors and 28 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 8.340079 seconds
+Final Part (writing) took 0.804397 seconds
+\n
+This uses 15 MPI processors and 28 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 6.707260 seconds
+Final Part (writing) took 0.836644 seconds
+\n

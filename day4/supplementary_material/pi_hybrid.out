@@ -1,0 +1,36 @@
+This uses 1 MPI processors and 8 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 5.5695e-14
+the solution took 0.386329 seconds
+\n
+This uses 1 MPI processors and 9 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 1.13086e-15
+the solution took 0.468692 seconds
+\n
+This uses 1 MPI processors and 10 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 5.55537e-14
+the solution took 0.427828 seconds
+\n
+This uses 2 MPI processors and 8 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 2.75648e-14
+the solution took 0.217274 seconds
+\n
+This uses 2 MPI processors and 9 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 5.51296e-15
+the solution took 0.2685 seconds
+\n
+This uses 2 MPI processors and 10 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 4.29728e-14
+the solution took 0.270419 seconds
+\n
+This uses 3 MPI processors and 8 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 1.41358e-15
+the solution took 0.161391 seconds
+\n
+This uses 3 MPI processors and 9 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 1.35704e-14
+the solution took 0.19427 seconds
+\n
+This uses 3 MPI processors and 10 OMP threads:
+500000000 steps approximates pi as : 3.14159, with relative error 9.61234e-15
+the solution took 0.186055 seconds
+\n
