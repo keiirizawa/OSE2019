@@ -6,15 +6,14 @@
 
 #SBATCH --time=00:01:00
 
-#SBATCH --job-name=dot_product
-#SBATCH --output=dot_product.out
-#SBATCH --error=dot_product.err
+#SBATCH --job-name=dot_prod
+#SBATCH --output=dot_prod.out
+#SBATCH --error=dot_prod.err
 
 for i in `seq 1 8`; do
     echo "This uses $i number of threads:"
     export OMP_NUM_THREADS=$i
     ./dot_prod.exe
-    echo "\n"
 done
 
 
