@@ -55,8 +55,8 @@ int main(){
     cout << "Please prove R and N:" << endl;
     int R, N;
     double pi_omp, pi_serial;
-    int R = 1;
-    int N = 100000;
+    R = 1;
+    N = 100000;
     int max_threads = omp_get_max_threads();
     double time_parallel = -omp_get_wtime();
     pi_omp = monte_carlo_omp(R, N);
