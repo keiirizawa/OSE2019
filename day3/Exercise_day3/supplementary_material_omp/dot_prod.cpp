@@ -7,11 +7,12 @@ int main(void){
     std::vector<double> a(N);
     std::vector<double> b(N);
 
-    int num_threads = 5; //omp_get_max_threads();
+    int num_threads = omp_get_max_threads();
     std::cout << "dot of vectors with length " << N  << " with " << num_threads << " threads" << std::endl;
 
+    int chunk = 3;
     // initialize the vectors
-    #pragma omp for
+    #pragma omp for schedule(static,chunk)
     for(int i=0; i<N; i++) {
         a[i] = 1./2.;
         b[i] = double(i+1);
