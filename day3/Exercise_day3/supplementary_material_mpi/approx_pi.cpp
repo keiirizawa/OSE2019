@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    /* gather the value of count of each processor to receivedata of rank 0 */
-    MPI_Gather(&count, 1, MPI_DOUBLE, &total_count, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+    /* Reduce the value of count of each processor to receivedata of rank 0 */
+    MPI_Reduce(&count, &total_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
     if (rank == 0){
         pi = 4 * total_count / N;
