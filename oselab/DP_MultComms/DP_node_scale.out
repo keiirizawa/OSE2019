@@ -3,8 +3,8 @@ This uses 1 MPI processors and 28 OMP threads:
 libgomp: Invalid value for environment variable OMP_NUM_THREADS
 iteration 1 max error 11.488971 
 iteration 2 max error 7.133656 
-Iterations took 61.131693 seconds
-Final Part (writing) took 0.834992 seconds
+Iterations took 61.006840 seconds
+Final Part (writing) took 0.837642 seconds
 \n
 This uses 2 MPI processors and 28 OMP threads:
 
@@ -13,8 +13,8 @@ libgomp: Invalid value for environment variable OMP_NUM_THREADS
 libgomp: Invalid value for environment variable OMP_NUM_THREADS
 iteration 1 max error 11.488971 
 iteration 2 max error 7.133656 
-Iterations took 31.286153 seconds
-Final Part (writing) took 0.828767 seconds
+Iterations took 31.551105 seconds
+Final Part (writing) took 0.819145 seconds
 \n
 This uses 3 MPI processors and 28 OMP threads:
 
@@ -25,8 +25,8 @@ libgomp: Invalid value for environment variable OMP_NUM_THREADS
 libgomp: Invalid value for environment variable OMP_NUM_THREADS
 iteration 1 max error 11.488971 
 iteration 2 max error 7.133656 
-Iterations took 21.700828 seconds
-Final Part (writing) took 0.861716 seconds
+Iterations took 21.697666 seconds
+Final Part (writing) took 0.868243 seconds
 \n
 This uses 4 MPI processors and 28 OMP threads:
 
@@ -39,8 +39,8 @@ libgomp: Invalid value for environment variable OMP_NUM_THREADS
 libgomp: Invalid value for environment variable OMP_NUM_THREADS
 iteration 1 max error 11.488971 
 iteration 2 max error 7.133656 
-Iterations took 16.744303 seconds
-Final Part (writing) took 0.823367 seconds
+Iterations took 16.685790 seconds
+Final Part (writing) took 0.833938 seconds
 \n
 This uses 5 MPI processors and 28 OMP threads:
 
@@ -55,6 +55,6 @@ libgomp: Invalid value for environment variable OMP_NUM_THREADS
 libgomp: Invalid value for environment variable OMP_NUM_THREADS
 iteration 1 max error 11.488971 
 iteration 2 max error 7.133656 
-Iterations took 14.309540 seconds
-Final Part (writing) took 0.785411 seconds
+Iterations took 14.247624 seconds
+Final Part (writing) took 0.793211 seconds
 \n

@@ -1,0 +1,30 @@
+This uses 10 MPI nodes and 1 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 150.741917 seconds
+Final Part (writing) took 0.807020 seconds
+\n
+This uses 10 MPI nodes and 2 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 77.704830 seconds
+Final Part (writing) took 0.805596 seconds
+\n
+This uses 10 MPI nodes and 3 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 55.456880 seconds
+Final Part (writing) took 0.807008 seconds
+\n
+This uses 10 MPI nodes and 4 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 44.817129 seconds
+Final Part (writing) took 0.796712 seconds
+\n
+This uses 10 MPI nodes and 5 OMP threads:
+iteration 1 max error 11.488971 
+iteration 2 max error 7.133656 
+Iterations took 36.373884 seconds
+Final Part (writing) took 0.794067 seconds
+\n
