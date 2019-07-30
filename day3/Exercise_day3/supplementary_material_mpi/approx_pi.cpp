@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 
     N = 1000000;
     num = N / size;
+    remainder = N % size;    
 
     if (rank < remainder){
         start = rank * (num + 1);
