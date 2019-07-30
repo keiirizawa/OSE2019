@@ -11,4 +11,4 @@
 module load openmpi
 
 ### MPI executable
-	mpiexec -np ./allreduce.exec
+	mpirun ./allreduce.exec

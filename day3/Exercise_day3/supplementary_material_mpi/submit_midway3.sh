@@ -4,11 +4,11 @@
 
 #SBATCH --time=00:02:00
 
-#SBATCH --output=allreduce.out
-#SBATCH --error=allreduce.err
+#SBATCH --output=scatter.out
+#SBATCH --error=scatter.err
 
 # load the openmpi module
 module load openmpi
 
 ### MPI executable
-	mpiexec -np ./scatter.exec
+	mpirun ./scatter.exec

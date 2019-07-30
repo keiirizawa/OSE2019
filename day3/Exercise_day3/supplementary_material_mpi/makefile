@@ -13,4 +13,4 @@ scatter.o: scatter.cpp
 	mpicxx -O3 scatter.cpp -o scatter.exec
 
 approx_pi.o: approx_pi.cpp
-	mpicxx -O3 approx_pi.cpp -o approx_pi.exec
+	mpicxx -std=c++11 approx_pi.cpp -o approx_pi.exec
